@@ -4,7 +4,7 @@ import pyperclip
 import google.generativeai as palm  # <-- Google PaLM
 
 # Initialize PaLM with your Google API key
-palm.configure(api_key="AIzaSyDQYXxV49hwoJghhYHqeubcZ0zhJDuUUI0")
+palm.configure(api_key="<Your_api_key>")
 
 def is_last_message_from_sender(chat_log, sender_name="Rohan Das"):
     messages = chat_log.strip().split("\n")
@@ -37,7 +37,7 @@ while True:
 
     if is_last_message_from_sender(chat_history):
         # Step 5: Generate a response using Google's PaLM
-        prompt = f"""You are a person named Naruto who speaks Hindi and English. You are from India and a coder. 
+        prompt = f"""You are a person named <name> who speaks Hindi and English. You are from India and a coder. 
         Analyze the chat and roast people in a funny way. Respond only with the roast (no names/timestamps).
         Chat log:
         {chat_history}
